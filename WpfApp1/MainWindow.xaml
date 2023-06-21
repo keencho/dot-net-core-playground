@@ -6,8 +6,20 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" /> <!-- First row -->
+            <RowDefinition Height="Auto" /> <!-- Second row -->
+        </Grid.RowDefinitions>
+        
+        <Border BorderBrush="Black" BorderThickness="1">
+            <StackPanel Grid.Row="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" IsEnabled="True">
+                    <TextBlock x:Name="TextBlock" MaxWidth="200" MaxHeight="100" TextWrapping="Wrap">Hello, World!</TextBlock>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Click="KeyboardClickEventHandler">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -21,22 +33,5 @@
                 </Button.Style>
             </Button>
         </StackPanel>
-        
-        <!-- <Button  -->
-        <!--     Grid.Row="0"  -->
-        <!--     Grid.Column="0"  -->
-        <!--     Content="START" -->
-        <!--     HorizontalAlignment="Center"  -->
-        <!--     VerticalAlignment="Center"  -->
-        <!--     Padding="10" -->
-        <!--     Click="StartKeyboardClickEventHandler"/> -->
-        <!-- <Button  -->
-        <!--     Grid.Row="0"  -->
-        <!--     Grid.Column="1"  -->
-        <!--     Content="STOP" -->
-        <!--     HorizontalAlignment="Center"  -->
-        <!--     VerticalAlignment="Center"  -->
-        <!--     Padding="10" -->
-        <!--     Click="StopKeyboardClickEventHandler"/> -->
     </Grid>
 </Window>
